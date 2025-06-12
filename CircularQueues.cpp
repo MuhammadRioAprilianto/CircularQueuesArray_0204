@@ -69,5 +69,8 @@ class Queues{
         }
     }
 
-    
+    void display()
+    {
+        
+    }
 };
