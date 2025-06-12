@@ -42,4 +42,9 @@ class Queues{
         } 
         queues_array[REAR] = num;
     }
+
+    void remove()
+    {
+        
+    }
 };
