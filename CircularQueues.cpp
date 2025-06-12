@@ -6,4 +6,10 @@ class Queues{
     static const int max = 5; //memubuat array dengan panjang 5 index
     int FRONT, REAR; // membuat penanda eleman pertama dan terakhir
     int queues_array[5]; //membuat array queues
+
+    public:
+    Queues(){ //memuat penanda queues dengan set FRONT dan REAR
+        FRONT = -1;
+        REAR = -1;
+    }
 };
