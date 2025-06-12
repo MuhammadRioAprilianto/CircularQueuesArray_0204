@@ -128,7 +128,7 @@ int main()
             cout << "2. Implement Delete Operation" << endl;
             cout << "3. Display Values" << endl;
             cout << "4. Exit" << endl;
-            cout << "Enter Your Choice: (1-4)";
+            cout << "Enter Your Choice(1-4):";
             cin >> ch;
             cout << endl;
 
