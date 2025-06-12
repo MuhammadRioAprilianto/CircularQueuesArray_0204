@@ -23,6 +23,15 @@ class Queues{
         if ((FRONT == 0 && REAR == max -1 ) || (FRONT == REAR + 1))
         {
             cout << "\nQueue Overflow\n"; //1.a
+            return; // 1.b
         }
+
+        //2. apakah antrian kosong?
+        if (FRONT == -1)
+        {
+            FRONT = 0; //2.a
+            REAR = 0; //2.b
+        }
+        
     }
 };
