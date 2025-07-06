@@ -1,20 +1,68 @@
+/**
+ * @mainpage Documentation Project Circular Queues
+ * 
+ * @section introduction
+ * project ini merupakan project struktur data
+ * menggunakan struktur queues dengan pendekatan circular array
+ * 
+ * @section opration
+ * project ini memiliki bebrapa operasi diantaranya:
+ * 1. insert
+ * 2. delete
+ * 3. display
+ * 
+ * @section cara penggunaan
+ * berikut beberapa menu yang bisa digunakan
+ * 1. en queue
+ * 2. de queue
+ * 3. display
+ * 4. exit
+ * 
+ * @author Profile
+ * - Nama : Muhammad Rio Aprilianto
+ * - NIM  : 20240140204
+ * - Kelas: TI/D
+ * 
+ * @brief 
+ * @version 0.1
+ * @date 2025-06-23
+ * 
+ * @copyright rio.umy.ac.id (c) 2025
+ * 
+ */
+
 #include <iostream>
 using namespace std;
 
+/**
+ * @class Queues
+ * @brief Class ini untuk operasi lengkap queues
+ */
 class Queues{
     private:
-    static const int max = 5; //memubuat array dengan panjang 5 index
-    int FRONT, REAR; // membuat penanda eleman pertama dan terakhir
-    int queues_array[5]; //membuat array queues
+    static const int max = 5; ///< variable max untuk menyimpan ukuran maximum antrian
+    int FRONT; ///< variable private FRONT untuk menyimpan posisi depan antrian
+    int REAR; ///< variable private REAR unutk menyimpan posisi belakang antrian
+    int queues_array[max]; //variable queues_array untuk menyimpan eleman antrian
 
     public:
+    /**
+     * @brief Construct a new Queues object
+     * set default queues null
+     * with FRONT = -1 and REAR = -1 
+     */
     Queues(){ //memuat penanda queues dengan set FRONT dan REAR
         FRONT = -1;
         REAR = -1;
     }
 
+    /**
+     * @brief method untuk memasukkan data dalam antrian
+     * data dimasukkan dalam variable queues_array
+     * terdapat variable num untuk menyimpan data yang diinputkan
+     */
     void insert(){ //memuat fungsi insert
-        int num;
+        int num; ///< variable num untuk menyimpan data yang diinputkan
         cout << "Enter a number: ";
         cin >> num;
         cout << endl;
@@ -43,6 +91,10 @@ class Queues{
         queues_array[REAR] = num;
     }
 
+    /**
+     * @brief method yang digunakan unutk menghapus element pada array
+     * data yang akan dihapus adalan element FRONT dari queues_array
+     */
     void remove()
     {
         //cek apakah antrian kosong?
@@ -69,10 +121,14 @@ class Queues{
         }
     }
 
+    /**
+     * @brief method ini digunakan untuk menampilkan data antrian
+     * data yang ditampilkan terdapat di dalam variable queues_array
+     */
     void display()
     {
-        int FRONT_position = FRONT;
-        int REAR_position = REAR;
+        int FRONT_position = FRONT; ///< variable FRONT_positian menandakan data pertama pada array
+        int REAR_position = REAR; ///< variable REAR_positian menandakan data terakhir pada array
 
         // cek apakah antrian kosong?
         if (FRONT == -1)
@@ -89,7 +145,7 @@ class Queues{
             while (FRONT_position <= REAR_position)
             {
                 cout << queues_array[FRONT_position] << "   ";
-                FRONT_position;
+                FRONT_position++;
             }
             cout << endl;
         }
@@ -114,10 +170,14 @@ class Queues{
     }
 };
 
+/**
+ * @brief function yang digunakan untuk memanggil dan menjalankan semua method yang telah dibuat
+ * pada function ini dibuat objek q dari class Queues 
+ */
 int main()
 {
     Queues q; 
-    char ch;
+    char ch; ///< variable ch yang digunakan untuk membuat switch case
 
     while (true)
     {
